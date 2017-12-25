@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- custom dimens -->
+    <dimen name="dimen_60">60dp</dimen>
+
+</resources>

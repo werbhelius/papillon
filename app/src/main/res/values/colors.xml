@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- custom color -->
+    <color name="color_0C0C0C">#0C0C0C</color>
+    <color name="color_333333">#333333</color>
+    <color name="color_EA4C89">#EA4C89</color>
+
+</resources>
