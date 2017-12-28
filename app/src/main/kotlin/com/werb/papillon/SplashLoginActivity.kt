@@ -40,7 +40,8 @@ class SplashLoginActivity : BaseActivity() {
         tokenViewModel = ViewModelProviders.of(this, TokenViewModel.Factory(TokenRepository())).get(TokenViewModel::class.java)
         tokenViewModel.token?.observe(this, Observer { token ->
             token?.let {
-                ToastUtils.show("Token is ${it.access_token}")
+                loginButton.text = "Welcome"
+                MainActivity.startActivity(this)
             } ?: ToastUtils.show("Token is null")
         })
         tokenViewModel.loading.observe(this, Observer { loading ->
