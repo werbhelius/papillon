@@ -3,6 +3,7 @@ package com.werb.papillon
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.os.Handler
 import com.werb.papillon.model.OAuth
 import com.werb.papillon.persistence.OAuthObserver
 import com.werb.papillon.persistence.OAuthViewModel
@@ -35,13 +36,19 @@ class SplashLoginActivity : BaseActivity() {
         }
     }
 
+    private fun toMain() {
+        loginButton.text = "Welcome"
+        Handler().postDelayed({
+            MainActivity.startActivity(this)
+        }, 1000)
+    }
+
     private fun subscribeUI() {
         oauthViewModel = ViewModelProviders.of(this, OAuthViewModel.Factory()).get(OAuthViewModel::class.java)
         tokenViewModel = ViewModelProviders.of(this, TokenViewModel.Factory(TokenRepository())).get(TokenViewModel::class.java)
         tokenViewModel.token?.observe(this, Observer { token ->
             token?.let {
-                loginButton.text = "Welcome"
-                MainActivity.startActivity(this)
+                toMain()
             } ?: ToastUtils.show("Token is null")
         })
         tokenViewModel.loading.observe(this, Observer { loading ->

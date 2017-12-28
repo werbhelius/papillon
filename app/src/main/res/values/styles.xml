@@ -10,4 +10,23 @@
         <item name="android:screenOrientation">portrait</item>
     </style>
 
+    <style name="DrawerLayoutTheme" parent="AppTheme">
+        <item name="android:statusBarColor">@android:color/transparent</item>
+    </style>
+
+    <style name="Search.Toolbar.Theme.left" parent="Base.Widget.AppCompat.Toolbar">
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+    </style>
+
+    <style name="Search.Toolbar.Theme.Text" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">#66262626</item>
+    </style>
+
+    <style name="Main.Toolbar" parent="@style/ThemeOverlay.AppCompat.Dark">
+        <item name="colorControlNormal">@color/color_FFFFFF</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetStartWithNavigation">0dp</item>
+    </style>
+
 </resources>

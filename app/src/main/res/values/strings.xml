@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">papillon</string>
     <string name="token_oauth_error">Authorization failed, please try again</string>
+    <string name="search_in_papillon">Search in papillon</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>

@@ -2,4 +2,7 @@
 <resources>
     <string name="app_name">papillon</string>
     <string name="token_oauth_error">Authorization 验证失败，请重试</string>
+    <string name="search_in_papillon">Search in papillon</string>
+    <string name="open">开启</string>
+    <string name="close">关闭</string>
 </resources>

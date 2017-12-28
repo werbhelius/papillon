@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/searchLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp"
+    android:layout_marginTop="5dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/searchToolbar"
+            style="@style/Search.Toolbar.Theme.left"
+            app:theme="@style/Search.Toolbar.Theme.Text"
+            android:layout_width="match_parent"
+            android:layout_height="48dp" />
+
+        <android.support.v7.widget.AppCompatEditText
+            android:id="@+id/searchEdit"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="54dp"
+            android:background="@null"
+            android:hint="@string/search_in_papillon"
+            android:imeOptions="actionSearch"
+            android:singleLine="true"
+            android:visibility="gone" />
+
+        <FrameLayout
+            android:id="@+id/expandLayout"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
+
