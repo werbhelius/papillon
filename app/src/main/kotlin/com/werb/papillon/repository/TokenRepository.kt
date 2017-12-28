@@ -18,14 +18,11 @@ import retrofit2.Response
  */
 class TokenRepository: LoadingDataSource() {
 
-    private var token: MutableLiveData<Token> = MutableLiveData()
-
-    fun localToken(): LiveData<Token>? {
-        PreferencesStore.token?.let {
-            token.value = it
-            return token
-        } ?: return null
+    private var token: MutableLiveData<Token> = MutableLiveData<Token>().apply {
+        value = PreferencesStore.token
     }
+
+    fun localToken(): LiveData<Token>? = token
 
     private fun saveToken(token: Token){
         PreferencesStore.token = token

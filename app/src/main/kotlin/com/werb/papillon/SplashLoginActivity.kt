@@ -49,7 +49,7 @@ class SplashLoginActivity : BaseActivity() {
         tokenViewModel.token?.observe(this, Observer { token ->
             token?.let {
                 toMain()
-            } ?: ToastUtils.show("Token is null")
+            } ?: ToastUtils.show(R.string.token_oauth_error)
         })
         tokenViewModel.loading.observe(this, Observer { loading ->
             loading?.let {
