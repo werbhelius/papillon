@@ -2,14 +2,32 @@ package com.werb.papillon.store
 
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
-import com.werb.papillon.MyApplication
+import android.text.TextUtils
+import com.google.gson.Gson
+import com.werb.papillon.MyApp
+import com.werb.papillon.model.Token
 
 /**
  * Created by wanbo on 2017/12/25.
  */
 object PreferencesStore {
 
-    private val mSharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(MyApplication.instance)
+    private val mSharedPreferences: SharedPreferences = PreferenceManager.getDefaultSharedPreferences(MyApp.instance)
+
+    private val TOKEN = "token"
+
+    var token: Token?
+        get() {
+            val str = mSharedPreferences.getString(TOKEN, null)
+            return if (TextUtils.isEmpty(str)) {
+                null
+            } else {
+                Gson().fromJson(str, Token::class.java)
+            }
+        }
+        set(value) {
+            mSharedPreferences.string(TOKEN, Gson().toJson(value))
+        }
 
 
 }

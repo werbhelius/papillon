@@ -8,7 +8,6 @@
         <item name="colorAccent">@color/color_EA4C89</item>
         <item name="android:textColor">@color/color_333333</item>
         <item name="android:screenOrientation">portrait</item>
-        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
     </style>
 
 </resources>

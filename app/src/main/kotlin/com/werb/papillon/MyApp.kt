@@ -5,7 +5,7 @@ import android.app.Application
 /**
  * Created by wanbo on 2017/12/25.
  */
-class MyApplication : Application() {
+class MyApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -13,7 +13,7 @@ class MyApplication : Application() {
     }
 
     companion object {
-        lateinit var instance: MyApplication
+        lateinit var instance: MyApp
     }
 
 }
