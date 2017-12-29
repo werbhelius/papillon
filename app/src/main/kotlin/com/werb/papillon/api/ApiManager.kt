@@ -1,11 +1,13 @@
 package com.werb.papillon.api
 
 import android.util.Log
+import com.werb.papillon.BuildConfig
 import okhttp3.HttpUrl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.concurrent.TimeUnit
 
 /**
  * Created by wanbo on 2017/12/25.
@@ -21,24 +23,37 @@ object ApiManager {
     const val TOKEN_HOST = "https://dribbble.com/"
     private const val API_HOST = "https://api.dribbble.com/v1/"
 
-    fun api(): DribbbleApi = create(HttpUrl.parse(API_HOST)!!)
+    fun api(): Api = create(HttpUrl.parse(API_HOST)!!)
 
-    fun oauth(): DribbbleApi = create(HttpUrl.parse(TOKEN_HOST)!!)
+    fun oauth(): Api = create(HttpUrl.parse(TOKEN_HOST)!!)
 
-    private fun create(httpUrl: HttpUrl): DribbbleApi {
+    private fun create(httpUrl: HttpUrl): Api {
+        val builder = OkHttpClient.Builder()
+        // log 拦截器
+        if (BuildConfig.DEBUG) {
+            builder.addInterceptor(logger())
+        }
+        // Header
+        builder.addInterceptor(HeaderInterceptor())
+        builder.addInterceptor(UnauthorisedInterceptor())
+        // Time
+        builder.connectTimeout(20, TimeUnit.SECONDS)
+        builder.readTimeout(20, TimeUnit.SECONDS)
+
+        return Retrofit.Builder()
+                .baseUrl(httpUrl)
+                .client(builder.build())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(Api::class.java)
+    }
+
+    private fun logger(): HttpLoggingInterceptor {
         val logger = HttpLoggingInterceptor(HttpLoggingInterceptor.Logger {
             Log.d("API", it)
         })
-        logger.level = HttpLoggingInterceptor.Level.BASIC
-        val client = OkHttpClient.Builder()
-                .addInterceptor(logger)
-                .build()
-        return Retrofit.Builder()
-                .baseUrl(httpUrl)
-                .client(client)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(DribbbleApi::class.java)
+        logger.level = HttpLoggingInterceptor.Level.BODY
+        return logger
     }
 
 }
