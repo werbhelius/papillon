@@ -2,9 +2,8 @@ package com.werb.papillon.repository
 
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
-import com.werb.papillon.R
 import com.werb.papillon.api.ApiManager
-import com.werb.papillon.model.User
+import com.werb.papillon.model.data.User
 import com.werb.papillon.store.PreferencesStore
 import com.werb.papillon.util.ToastUtils
 import retrofit2.Call

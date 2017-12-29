@@ -1,4 +1,4 @@
-package com.werb.papillon.model
+package com.werb.papillon.model.data
 
 import com.werb.papillon.api.ApiManager
 import java.util.*

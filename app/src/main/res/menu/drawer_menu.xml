@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:icon="@drawable/svg_home"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/explore"
+            android:icon="@drawable/svg_explore"
+            android:title="@string/explore" />
+        <item
+            android:id="@+id/designer"
+            android:icon="@drawable/svg_designer"
+            android:title="@string/designers" />
+        <item
+            android:id="@+id/buckets"
+            android:icon="@drawable/svg_buckets"
+            android:title="@string/buckets" />
+        <item
+            android:id="@+id/likes"
+            android:icon="@drawable/svg_likes"
+            android:title="@string/likes" />
+        <item
+            android:id="@+id/shots"
+            android:icon="@drawable/svg_shots"
+            android:title="@string/shots" />
+        <item
+            android:id="@+id/blog"
+            android:icon="@drawable/svg_blog"
+            android:title="@string/blog" />
+    </group>
+    <item android:title="@null">
+        <menu>
+            <item
+                android:id="@+id/setting"
+                android:icon="@drawable/svg_setting"
+                android:title="@string/setting" />
+        </menu>
+    </item>
+</menu>

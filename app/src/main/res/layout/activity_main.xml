@@ -81,16 +81,14 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:fitsSystemWindows="true"
-        app:insetForeground="#4000">
+        android:fitsSystemWindows="true">
 
-        <android.support.design.widget.NavigationView
-            android:id="@+id/mainDrawer"
-            android:layout_width="match_parent"
+        <com.werb.papillon.widget.LeftMenuList
+            android:id="@+id/menuList"
+            android:layout_width="281dp"
             android:layout_height="match_parent"
-            android:layout_gravity="start"
-            android:fitsSystemWindows="true"
-            app:headerLayout="@layout/widget_view_drawer_header"/>
+            android:background="@color/color_333333"
+            app:layoutManager="LinearLayoutManager"/>
 
     </android.support.design.internal.ScrimInsetsFrameLayout>
 

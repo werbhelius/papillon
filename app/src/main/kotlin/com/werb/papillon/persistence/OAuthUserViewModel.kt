@@ -3,7 +3,7 @@ package com.werb.papillon.persistence
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import com.werb.papillon.model.User
+import com.werb.papillon.model.data.User
 import com.werb.papillon.repository.UserRepository
 
 /**

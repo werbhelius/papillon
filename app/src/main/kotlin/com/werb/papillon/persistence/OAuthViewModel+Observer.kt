@@ -6,7 +6,7 @@ import android.net.Uri
 import android.util.Log
 import com.werb.papillon.MyApp
 import com.werb.papillon.api.ApiManager
-import com.werb.papillon.model.OAuth
+import com.werb.papillon.model.data.OAuth
 
 /**
  * Created by wanbo on 2017/12/28.

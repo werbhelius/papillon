@@ -4,8 +4,8 @@ import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import com.werb.papillon.R
 import com.werb.papillon.api.ApiManager
-import com.werb.papillon.model.OAuth
-import com.werb.papillon.model.Token
+import com.werb.papillon.model.data.OAuth
+import com.werb.papillon.model.data.Token
 import com.werb.papillon.store.PreferencesStore
 import com.werb.papillon.util.ToastUtils
 import retrofit2.Call

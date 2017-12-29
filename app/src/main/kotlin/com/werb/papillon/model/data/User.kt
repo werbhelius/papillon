@@ -1,4 +1,4 @@
-package com.werb.papillon.model
+package com.werb.papillon.model.data
 
 /**
  * Created by wanbo on 2017/12/28.

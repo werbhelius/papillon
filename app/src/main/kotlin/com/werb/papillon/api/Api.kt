@@ -1,8 +1,8 @@
 package com.werb.papillon.api
 
-import com.werb.papillon.model.OAuth
-import com.werb.papillon.model.Token
-import com.werb.papillon.model.User
+import com.werb.papillon.model.data.OAuth
+import com.werb.papillon.model.data.Token
+import com.werb.papillon.model.data.User
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET

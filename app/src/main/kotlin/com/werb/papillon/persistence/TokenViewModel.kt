@@ -3,8 +3,8 @@ package com.werb.papillon.persistence
 import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
-import com.werb.papillon.model.OAuth
-import com.werb.papillon.model.Token
+import com.werb.papillon.model.data.OAuth
+import com.werb.papillon.model.data.Token
 import com.werb.papillon.repository.TokenRepository
 
 /**

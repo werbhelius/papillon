@@ -4,4 +4,14 @@
     <string name="search_in_papillon">Search in papillon</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+
+    <!-- menu -->
+    <string name="home">Home</string>
+    <string name="explore">Explore</string>
+    <string name="designers">Designers</string>
+    <string name="buckets">Buckets</string>
+    <string name="likes">Likes</string>
+    <string name="shots">Shots</string>
+    <string name="blog">Blog</string>
+    <string name="setting">Setting</string>
 </resources>

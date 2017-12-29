@@ -4,7 +4,7 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.os.Handler
-import com.werb.papillon.model.OAuth
+import com.werb.papillon.model.data.OAuth
 import com.werb.papillon.persistence.OAuthObserver
 import com.werb.papillon.persistence.OAuthUserViewModel
 import com.werb.papillon.persistence.OAuthViewModel

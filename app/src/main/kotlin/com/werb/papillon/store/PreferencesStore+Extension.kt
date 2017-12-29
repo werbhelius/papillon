@@ -5,8 +5,8 @@ import android.preference.PreferenceManager
 import android.text.TextUtils
 import com.google.gson.Gson
 import com.werb.papillon.MyApp
-import com.werb.papillon.model.Token
-import com.werb.papillon.model.User
+import com.werb.papillon.model.data.Token
+import com.werb.papillon.model.data.User
 
 /**
  * Created by wanbo on 2017/12/25.
