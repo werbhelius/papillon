@@ -8,10 +8,13 @@
         <item name="colorAccent">@color/color_EA4C89</item>
         <item name="android:textColor">@color/color_333333</item>
         <item name="android:screenOrientation">portrait</item>
+        <item name="drawerArrowStyle">@style/left.Drawer.Arrow.Style</item>
     </style>
 
-    <style name="DrawerLayoutTheme" parent="AppTheme">
-        <item name="android:statusBarColor">@android:color/transparent</item>
+    <!-- 左边的箭头指示-->
+    <style name="left.Drawer.Arrow.Style" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">@color/color_5F5F5F</item>
     </style>
 
     <style name="Search.Toolbar.Theme.left" parent="Base.Widget.AppCompat.Toolbar">
@@ -20,7 +23,7 @@
     </style>
 
     <style name="Search.Toolbar.Theme.Text" parent="ThemeOverlay.AppCompat.Light">
-        <item name="android:textColorPrimary">#66262626</item>
+        <item name="android:textColorPrimary">@color/color_9E9E9E</item>
     </style>
 
     <style name="Main.Toolbar" parent="@style/ThemeOverlay.AppCompat.Dark">

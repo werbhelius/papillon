@@ -12,42 +12,42 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <FrameLayout
+            <android.support.design.widget.AppBarLayout
                 android:id="@+id/mainAppLayout"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/color_333333">
+                android:layout_height="wrap_content">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/widget_view_search" />
+
+                    <android.support.v7.widget.Toolbar
+                        android:id="@+id/mainToolbar"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"
+                        android:layout_marginBottom="5dp"
+                        android:layout_marginLeft="6dp"
+                        android:layout_marginRight="6dp"
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone"
+                        app:theme="@style/Main.Toolbar"
+                        style="@style/Main.Toolbar"/>
+
+                </FrameLayout>
 
                 <android.support.design.widget.TabLayout
                     android:id="@+id/mainTabLayout"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:layout_marginTop="65dp"
                     android:background="@color/color_333333"
                     app:tabIndicatorColor="@color/color_FFFFFF"
                     app:tabMode="scrollable"
                     app:tabSelectedTextColor="@color/color_FFFFFF"
                     app:tabTextColor="@color/color_FFFFFF" />
 
-                <android.support.v7.widget.Toolbar
-                    android:id="@+id/mainToolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="?attr/actionBarSize"
-                    android:layout_marginBottom="5dp"
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginRight="6dp"
-                    android:layout_marginTop="5dp"
-                    android:visibility="gone"
-                    app:theme="@style/Main.Toolbar"
-                    style="@style/Main.Toolbar"/>
-
-            </FrameLayout>
-
-            <include layout="@layout/widget_view_search" />
+            </android.support.design.widget.AppBarLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,9 +69,6 @@
                 android:layout_height="match_parent"
                 android:background="#66000000"
                 android:visibility="gone" />
-
-        </RelativeLayout>
-
 
     </android.support.design.widget.CoordinatorLayout>
 

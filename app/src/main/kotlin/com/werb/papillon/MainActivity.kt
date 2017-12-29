@@ -26,9 +26,9 @@ class MainActivity : AppCompatActivity() {
 
     private fun initUI() {
         // toolbar
-        setSupportActionBar(searchToolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
         toolbarTitle.text = string(R.string.app_name)
+        searchToolbar.inflateMenu(R.menu.toolbar_search)
         val toggle = ActionBarDrawerToggle(this, mainDrawerLayout, searchToolbar, R.string.open, R.string.close)
         mainDrawerLayout.setDrawerListener(toggle)
         toggle.syncState()
