@@ -10,6 +10,7 @@ import android.support.v7.app.ActionBarDrawerToggle
 import com.werb.papillon.extension.string
 import com.werb.papillon.persistence.OAuthUserViewModel
 import com.werb.papillon.repository.UserRepository
+import com.werb.papillon.ui.home.TabLayoutAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.widget_view_search.*
 
@@ -32,6 +33,10 @@ class MainActivity : AppCompatActivity() {
         val toggle = ActionBarDrawerToggle(this, mainDrawerLayout, searchToolbar, R.string.open, R.string.close)
         mainDrawerLayout.setDrawerListener(toggle)
         toggle.syncState()
+        // tabLayout
+        mainViewPager.offscreenPageLimit = 4
+        mainViewPager.adapter = TabLayoutAdapter(supportFragmentManager)
+        mainTabLayout.setupWithViewPager(mainViewPager)
     }
 
     private fun subscribeUI() {

@@ -32,4 +32,9 @@
         <item name="contentInsetStartWithNavigation">0dp</item>
     </style>
 
+    <style name="Tab.Text" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/googlesans_bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
 </resources>

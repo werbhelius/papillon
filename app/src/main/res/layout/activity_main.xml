@@ -41,8 +41,8 @@
                     android:id="@+id/mainTabLayout"
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
-                    android:background="@color/color_333333"
-                    app:tabIndicatorColor="@color/color_FFFFFF"
+                    app:tabIndicatorColor="@color/color_EA4C89"
+                    app:tabTextAppearance="@style/Tab.Text"
                     app:tabMode="scrollable"
                     app:tabSelectedTextColor="@color/color_FFFFFF"
                     app:tabTextColor="@color/color_FFFFFF" />

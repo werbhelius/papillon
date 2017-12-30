@@ -14,4 +14,10 @@
     <string name="shots">Shots</string>
     <string name="blog">Blog</string>
     <string name="setting">Setting</string>
+
+    <!-- feed -->
+    <string name="popular">popular</string>
+    <string name="recent">recent</string>
+    <string name="views">views</string>
+    <string name="comments">comments</string>
 </resources>
