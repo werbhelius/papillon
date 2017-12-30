@@ -1,7 +1,6 @@
 package com.werb.papillon
 
 import android.app.Application
-import com.facebook.drawee.backends.pipeline.Fresco
 import com.werb.library.MoreType
 import com.werb.library.link.RegisterItem
 import com.werb.papillon.widget.card.LineViewHolder
@@ -14,7 +13,6 @@ class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
-        Fresco.initialize(this)
         initMoreViewType()
     }
 

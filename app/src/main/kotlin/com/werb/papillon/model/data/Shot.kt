@@ -16,6 +16,7 @@ class Shot {
     val attachments_count: Int = 0
     val rebounds_count: Int = 0
     val buckets_count: Int = 0
+    val images: image? = null
     val created_at: String? = null
     val updated_at: String? = null
     val html_url: String? = null
@@ -25,9 +26,10 @@ class Shot {
     val likes_url: String? = null
     val projects_url: String? = null
     val rebounds_url: String? = null
-    val animated = false
+    var animated = false
     val tags: Array<String>? = null
     val user: User? = null
+    val team: Team? = null
 
 }
 
@@ -39,7 +41,7 @@ class image {
 
 }
 
-class team {
+class Team {
 
     val id: String? = null
     val name: String? = null

@@ -5,15 +5,14 @@
     android:layout_width="281dp"
     android:layout_height="wrap_content">
 
-    <com.facebook.drawee.view.SimpleDraweeView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/avatar"
         android:layout_width="@dimen/dimen_48"
         android:layout_height="@dimen/dimen_48"
         android:layout_marginStart="@dimen/dimen_25"
         android:layout_marginTop="@dimen/dimen_50"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:roundAsCircle="true" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/name"

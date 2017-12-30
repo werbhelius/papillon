@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/dimen_5"
+        android:layout_marginTop="@dimen/dimen_5"
+        android:layout_marginLeft="@dimen/dimen_4"
+        android:layout_marginRight="@dimen/dimen_4"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:cardCornerRadius="@dimen/dimen_4"
+        app:cardElevation="@dimen/dimen_3"
+        app:cardPreventCornerOverlap="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/thumb"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/commentLayout" />
+
+            <FrameLayout
+                android:id="@+id/commentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="@dimen/dimen_8"
+                    android:layout_marginLeft="@dimen/dimen_11"
+                    android:layout_marginRight="@dimen/dimen_11"
+                    android:layout_marginTop="@dimen/dimen_8">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/like"
+                        android:layout_width="@dimen/dimen_14"
+                        android:layout_height="@dimen/dimen_14"
+                        android:layout_centerVertical="true"
+                        app:srcCompat="@drawable/svg_like_feed" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/likeCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dimen_4"
+                        android:layout_toRightOf="@id/like"
+                        android:fontFamily="@font/googlesans_medium"
+                        android:textColor="@color/color_4A4A4A"
+                        android:textSize="@dimen/dimen_12"
+                        tools:text="35" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/comment"
+                        android:layout_width="@dimen/dimen_14"
+                        android:layout_height="@dimen/dimen_14"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="@dimen/dimen_4"
+                        android:layout_toLeftOf="@+id/commentCount"
+                        app:srcCompat="@drawable/svg_comment_feed" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/commentCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:fontFamily="@font/googlesans_medium"
+                        android:textColor="@color/color_4A4A4A"
+                        android:textSize="@dimen/dimen_12"
+                        tools:text="17" />
+
+                </RelativeLayout>
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/gif"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dimen_8"
+                    android:background="@drawable/widget_view_gif_bg"
+                    android:fontFamily="@font/googlesans_bold"
+                    android:paddingLeft="3dp"
+                    android:paddingRight="3dp"
+                    android:paddingTop="@dimen/dimen_1"
+                    android:paddingBottom="@dimen/dimen_1"
+                    android:text="GIF"
+                    android:textSize="@dimen/dimen_10"
+                    android:visibility="gone" />
+
+            </FrameLayout>
+
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+</FrameLayout>

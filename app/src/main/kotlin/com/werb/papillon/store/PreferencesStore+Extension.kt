@@ -17,6 +17,7 @@ object PreferencesStore {
 
     private val TOKEN = "token"
     private val USER = "user"
+    private val FEED = "feed"
 
     var token: Token?
         get() {
@@ -42,6 +43,15 @@ object PreferencesStore {
         }
         set(value) {
             mSharedPreferences.string(USER, Gson().toJson(value))
+        }
+
+    var feed: FeedUI
+        get() {
+            val str = mSharedPreferences.getString(FEED, FeedUI.GRID.name)
+            return FeedUI.valueOf(str)
+        }
+        set(value) {
+            mSharedPreferences.string(FEED, value.name)
         }
 
 
