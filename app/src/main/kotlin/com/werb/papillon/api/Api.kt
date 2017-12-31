@@ -28,4 +28,8 @@ interface Api {
               @Query("page") page: Int,
               @Query("per_page") per_page: Int = 30): Call<List<Shot>>
 
+    @GET("user/following/shots")
+    fun followingShots(@Query("page") page: Int,
+                       @Query("per_page") per_page: Int = 30): Call<List<Shot>>
+
 }

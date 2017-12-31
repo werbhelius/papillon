@@ -56,4 +56,6 @@ dependencies {
     // MoreType
     implementation 'com.werb.moretype:moretype:0.2.2-beta3'
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
+    // EventBus
+    implementation 'org.greenrobot:eventbus:3.1.1'
 }

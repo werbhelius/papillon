@@ -29,20 +29,3 @@ class OAuthViewModel : ViewModel() {
     }
 
 }
-
-class OAuthObserver(private val intent: Intent, private val tokenViewModel: TokenViewModel) : LifecycleObserver {
-
-    @OnLifecycleEvent(Lifecycle.Event.ON_CREATE)
-    fun requestToken() {
-        intent.data?.let {
-            val code = intent.data.getQueryParameter("code")
-            Log.d("OAuthObserver", "code: $code")
-            code?.let {
-                tokenViewModel.requestToken(OAuth().apply {
-                    this.code = code
-                })
-            }
-        }
-    }
-
-}

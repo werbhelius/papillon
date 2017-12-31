@@ -15,11 +15,12 @@ import retrofit2.Response
  */
 class ShotsRepository : LoadingDataSource() {
 
-    private var shots: MutableLiveData<List<Shot>> = MutableLiveData()
+    private var exploreShots: MutableLiveData<List<Shot>> = MutableLiveData()
+    private var followingShots: MutableLiveData<List<Shot>> = MutableLiveData()
 
     fun loading(): LiveData<Boolean> = loading
 
-    fun requestShots(timeframe: String? = null, sort: String? = null, page: Int): LiveData<List<Shot>> {
+    fun requestExploreShots(timeframe: String? = null, sort: String? = null, page: Int): LiveData<List<Shot>> {
         loading.value = true
         ApiManager.api()
                 .shots(sort, timeframe, page)
@@ -33,13 +34,36 @@ class ShotsRepository : LoadingDataSource() {
                         loading.value = false
                         response?.let {
                             if (response.isSuccessful) {
-                                shots.value = it.body()
+                                exploreShots.value = it.body()
                             }
                         }
                     }
 
                 })
-        return shots
+        return exploreShots
+    }
+
+    fun requestFollowingShots(page: Int): LiveData<List<Shot>> {
+        loading.value = true
+        ApiManager.api()
+                .followingShots(page)
+                .enqueue(object : Callback<List<Shot>> {
+
+                    override fun onFailure(call: Call<List<Shot>>?, t: Throwable?) {
+                        loading.value = false
+                    }
+
+                    override fun onResponse(call: Call<List<Shot>>?, response: Response<List<Shot>>?) {
+                        loading.value = false
+                        response?.let {
+                            if (response.isSuccessful) {
+                                followingShots.value = it.body()
+                            }
+                        }
+                    }
+
+                })
+        return followingShots
     }
 
 

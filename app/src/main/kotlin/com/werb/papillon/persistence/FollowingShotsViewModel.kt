@@ -7,12 +7,12 @@ import com.werb.papillon.repository.ShotsRepository
 /**
  * Created by wanbo on 2017/12/29.
  */
-class ShotsViewModel private constructor(private val shotsRepository: ShotsRepository, private val type: String) : ViewModel() {
+class FollowingShotsViewModel private constructor(private val shotsRepository: ShotsRepository) : ViewModel() {
 
     private val page = MutableLiveData<Int>()
 
     val shots: LiveData<List<Shot>> = Transformations.switchMap<Int, List<Shot>>(page) { input ->
-        shotsRepository.requestShots(page = input, sort = type) }
+        shotsRepository.requestFollowingShots(page = input) }
 
     var loading: LiveData<Boolean> = shotsRepository.loading()
         private set
@@ -25,11 +25,11 @@ class ShotsViewModel private constructor(private val shotsRepository: ShotsRepos
         page.value = if (page.value == null) 1 else page.value!! + 1
     }
 
-    class Factory(private val shotsRepository: ShotsRepository, private val type: String) : ViewModelProvider.NewInstanceFactory() {
+    class Factory(private val shotsRepository: ShotsRepository) : ViewModelProvider.NewInstanceFactory() {
 
         @Suppress("UNCHECKED_CAST")
         override fun <T : ViewModel> create(modelClass: Class<T>): T =
-                ShotsViewModel(shotsRepository, type) as T
+                FollowingShotsViewModel(shotsRepository) as T
     }
 
 }

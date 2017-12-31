@@ -5,7 +5,7 @@ import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.os.Handler
 import com.werb.papillon.model.data.OAuth
-import com.werb.papillon.persistence.OAuthObserver
+import com.werb.papillon.observer.OAuthObserver
 import com.werb.papillon.persistence.OAuthUserViewModel
 import com.werb.papillon.persistence.OAuthViewModel
 import com.werb.papillon.persistence.TokenViewModel
@@ -54,6 +54,7 @@ class SplashLoginActivity : BaseActivity() {
             token?.let {
                 // when token not null, request user info and to main
                 oauthUserViewModel.requestOAuthUser()
+                println(it.access_token)
                 toMain()
             } ?: ToastUtils.show(R.string.token_oauth_error)
         })

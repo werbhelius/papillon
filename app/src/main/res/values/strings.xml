@@ -20,4 +20,5 @@
     <string name="recent">recent</string>
     <string name="views">views</string>
     <string name="comments">comments</string>
+    <string name="following">following</string>
 </resources>
