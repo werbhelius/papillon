@@ -20,10 +20,10 @@ class ShotsRepository : LoadingDataSource() {
 
     fun loading(): LiveData<Boolean> = loading
 
-    fun requestExploreShots(timeframe: String? = null, sort: String? = null, page: Int): LiveData<List<Shot>> {
+    fun requestExploreShots(list: String? = null, timeframe: String? = null, sort: String? = null, page: Int): LiveData<List<Shot>> {
         loading.value = true
         ApiManager.api()
-                .shots(sort, timeframe, page)
+                .shots(list, timeframe, sort, page)
                 .enqueue(object : Callback<List<Shot>> {
 
                     override fun onFailure(call: Call<List<Shot>>?, t: Throwable?) {

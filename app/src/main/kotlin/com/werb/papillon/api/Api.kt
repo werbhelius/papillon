@@ -23,8 +23,9 @@ interface Api {
     fun oauthUser(): Call<User>
 
     @GET("shots")
-    fun shots(@Query("sort") sort: String? = null,
+    fun shots(@Query("list") list: String? = null,
               @Query("timeframe") timeframe: String? = null,
+              @Query("sort") sort: String? = null,
               @Query("page") page: Int,
               @Query("per_page") per_page: Int = 30): Call<List<Shot>>
 

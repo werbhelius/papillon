@@ -16,7 +16,7 @@
             android:layout_height="?attr/actionBarSize"
             app:tabIndicatorColor="@color/color_EA4C89"
             app:tabTextAppearance="@style/Tab.Text"
-            app:tabMode="fixed"
+            app:tabMode="scrollable"
             app:tabSelectedTextColor="@color/color_FFFFFF"
             app:tabTextColor="@color/color_FFFFFF" />
 

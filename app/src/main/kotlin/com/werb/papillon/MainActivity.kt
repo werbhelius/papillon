@@ -15,7 +15,8 @@ import com.werb.papillon.extension.string
 import com.werb.papillon.observer.EventBusObserver
 import com.werb.papillon.persistence.OAuthUserViewModel
 import com.werb.papillon.repository.UserRepository
-import com.werb.papillon.ui.explore.FeedFragment
+import com.werb.papillon.ui.explore.ExploreFragment
+import com.werb.papillon.ui.home.FollowingFragment
 import com.werb.papillon.ui.home.HomeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.widget_view_search.*
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     private fun getFragments(): ArrayList<Fragment> {
         return arrayListOf<Fragment>().apply {
             add(HomeFragment.newInstance())
-            add(FeedFragment.newInstance())
+            add(ExploreFragment.newInstance())
         }
     }
 
@@ -69,10 +70,10 @@ class MainActivity : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE)
         if (supportFragmentManager.findFragmentByTag(fragment::class.java.simpleName) == null) {
-            transaction.add(R.id.contentLayout, fragment, fragment::class.java.simpleName)
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).add(R.id.contentLayout, fragment, fragment::class.java.simpleName)
         }
         if (currentFragment != null) {
-            transaction.hide(currentFragment)
+            transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).hide(currentFragment)
         }
         transaction.show(fragment)
         transaction.commitAllowingStateLoss()

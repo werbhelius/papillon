@@ -1,4 +1,4 @@
-package com.werb.papillon.ui.explore
+package com.werb.papillon.ui.home
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -58,7 +58,7 @@ class ExploreFeedFragment : Fragment() {
 
     private fun subscribeUI() {
         if (!isAdded) return
-        shotsViewModel = ViewModelProviders.of(this, ExploreShotsViewModel.Factory(ShotsRepository(), arguments!!.getString("type"))).get(ExploreShotsViewModel::class.java)
+        shotsViewModel = ViewModelProviders.of(this, ExploreShotsViewModel.Factory(ShotsRepository())).get(ExploreShotsViewModel::class.java)
         shotsViewModel.shots.observe(this, Observer { shots ->
             shots?.let {
                 if (load) {
@@ -75,6 +75,7 @@ class ExploreFeedFragment : Fragment() {
                 }
             }
         })
+        shotsViewModel.setRequestConfig(sort = arguments?.getString("type"))
         shotsViewModel.refresh()
     }
 

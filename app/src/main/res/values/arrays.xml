@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="feed">
+        <item>@string/following</item>
         <item>@string/popular</item>
         <item>@string/recent</item>
-        <item>@string/views</item>
-        <item>@string/comments</item>
     </string-array>
 </resources>
